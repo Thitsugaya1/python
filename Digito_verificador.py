@@ -15,3 +15,21 @@ elif (11-resto) == 10:
     print "El digito verificador es: k"
 elif (11-resto) == 11:
     print "El digito verificador es: 0"
+
+#Posibilidad 2 (Validando los datos)
+lista = [3,2,7,6,5,4,3,2]
+rut = raw_input("Ingrese rut (sin puntos ni digito verificador): ")
+while rut.__contains__(".") or rut.__contains__(".") or len(rut) > 8 or len(rut) < 7:
+    rut = raw_input("Rut erroneo, ingreselo sin puntos ni digito verificador: ")
+suma = 0
+index = 0
+for i in rut:
+    suma += (int(i)*lista[index])
+    index += 1
+resto = suma%11
+if (11-resto) < 10:
+    print "El digito verificador es: ",11-resto
+elif (11-resto) == 10:
+    print "El digito verificador es: k"
+elif (11-resto) == 11:
+    print "El digito verificador es: 0"
